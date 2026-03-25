@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog & Articles | SUA Sub-Urban Anglers</title>
+  <meta name="description" content="Freshwater fishing guides, tips, and local Montreal fishing reports."/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🎣</div>
+      <div class="logo-text">
+        <span class="logo-title">SUA</span>
+        <span class="logo-sub">Sub-Urban Anglers</span>
+      </div>
+    </a>
+    <nav id="main-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="techniques.html" class="nav-link" data-dropdown>Learn to Fish <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="techniques.html">Techniques & Tactics</a>
+          <a href="blog-post.html">Knot Guide</a>
+          <a href="techniques.html#safety">Safety Tips</a>
+          <a href="species.html">Species Guide</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="gear.html" class="nav-link" data-dropdown>Gear <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="gear.html">Reviews</a>
+          <a href="gear.html#buyers-guides">Buyer's Guides</a>
+          <a href="gear.html#comparisons">Brand Comparisons</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="destinations.html" class="nav-link" data-dropdown>Destinations <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="destinations.html">Local Spots — Montreal</a>
+          <a href="destinations.html#travel">Travel Guides</a>
+          <a href="destinations.html#map">Interactive Map</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></div>
+      <div class="nav-item"><a href="conservation.html" class="nav-link">Conservation</a></div>
+      <div class="nav-item"><a href="shop.html" class="nav-link">Shop</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></div>
+      <div class="nav-item"><a href="community.html" class="nav-link nav-cta">Community</a></div>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero-sm" style="background:var(--dark);">
+  <div class="hero-bg" style="background-image:url('https://picsum.photos/1600/600?random=60');"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-sm-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Blog</span></div>
+      <h1>Blog & Articles</h1>
+      <p>Fishing guides, gear reviews, local reports, and stories from Montreal's waterways.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-cream">
+  <div class="container">
+    <div class="blog-layout">
+      <!-- MAIN CONTENT -->
+      <div class="blog-main">
+        <!-- Filter tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Posts</button>
+          <button class="filter-tab" data-filter="technique">Techniques</button>
+          <button class="filter-tab" data-filter="gear">Gear</button>
+          <button class="filter-tab" data-filter="spot">Destinations</button>
+          <button class="filter-tab" data-filter="species">Species</button>
+          <button class="filter-tab" data-filter="recipe">Recipes</button>
+          <button class="filter-tab" data-filter="tips">Tips & Conservation</button>
+        </div>
+
+        <div class="articles-grid">
+          <article class="article-card" data-category="technique">
+            <img src="https://picsum.photos/560/360?random=61" alt="Pike Fishing" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-technique">Technique</span>
+              <div class="card-meta"><span>📅 March 20, 2026</span><span>⏱ 8 min</span></div>
+              <h3>Spring Pike Fishing on the St. Lawrence: What's Working Right Now</h3>
+              <p>As ice-out arrives, northern pike flood the shallows. Here's exactly where to go and what to throw in the greater Montreal area this spring.</p>
+              <a href="blog-post.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="technique">
+            <img src="https://picsum.photos/560/360?random=62" alt="Fishing Knots" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-technique">Beginner</span>
+              <div class="card-meta"><span>📅 March 14, 2026</span><span>⏱ 6 min</span></div>
+              <h3>5 Essential Fishing Knots Every Angler Must Know (With Diagrams)</h3>
+              <p>If your knot slips, you lose the fish. Period. Master these five knots and you'll be ready for any situation on the water.</p>
+              <a href="blog-post.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="gear">
+            <img src="https://picsum.photos/560/360?random=63" alt="Spinning vs Baitcasting" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-gear">Gear Guide</span>
+              <div class="card-meta"><span>📅 March 8, 2026</span><span>⏱ 10 min</span></div>
+              <h3>Spinning vs. Baitcasting Reels: Which Is Right for Quebec Freshwater?</h3>
+              <p>An honest comparison for Montreal-area anglers targeting pike, walleye, and bass — with specific reel recommendations at every price point.</p>
+              <a href="gear.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="spot">
+            <img src="https://picsum.photos/560/360?random=64" alt="Lac Saint-Louis" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-spot">Destination</span>
+              <div class="card-meta"><span>📅 March 1, 2026</span><span>⏱ 7 min</span></div>
+              <h3>Lac Saint-Louis: A Complete Kayak Angler's Guide to Public Access Points</h3>
+              <p>The best lake in the Montreal area for bass and pike — and most anglers barely scratch the surface of what's available to kayakers.</p>
+              <a href="destinations.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="species">
+            <img src="https://picsum.photos/560/360?random=65" alt="Walleye" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-species">Species</span>
+              <div class="card-meta"><span>📅 Feb 22, 2026</span><span>⏱ 9 min</span></div>
+              <h3>How to Locate Walleye in Quebec: Deep Water Structure, Light, and Timing</h3>
+              <p>Walleye are the most misunderstood fish in Quebec. Once you understand how light drives their behaviour, you'll never struggle to find them again.</p>
+              <a href="species.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="recipe">
+            <img src="https://picsum.photos/560/360?random=66" alt="Walleye Recipe" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-recipe">Recipe</span>
+              <div class="card-meta"><span>📅 Feb 15, 2026</span><span>⏱ 5 min</span></div>
+              <h3>Pan-Fried Walleye with Lemon Butter: A Quebec Shore Lunch Classic</h3>
+              <p>Nothing beats fresh walleye cooked streamside. This recipe takes 15 minutes and requires nothing you wouldn't already have in your cooler.</p>
+              <a href="recipes.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="tips">
+            <img src="https://picsum.photos/560/360?random=67" alt="Catch and Release" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-tips">Conservation</span>
+              <div class="card-meta"><span>📅 Feb 8, 2026</span><span>⏱ 6 min</span></div>
+              <h3>Catch & Release Done Right: How to Ensure Your Fish Survives</h3>
+              <p>Most anglers who practice catch and release accidentally harm the fish they release. Here's the science-backed way to do it properly.</p>
+              <a href="conservation.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="spot">
+            <img src="https://picsum.photos/560/360?random=68" alt="Canal de Lachine" class="card-img"/>
+            <div class="card-body">
+              <span class="card-tag tag-spot">Urban Fishing</span>
+              <div class="card-meta"><span>📅 Feb 1, 2026</span><span>⏱ 5 min</span></div>
+              <h3>Canal de Lachine: Urban Fishing in the Heart of Montreal</h3>
+              <p>You don't need a car, a boat, or even a licence (in some sections) to catch fish in Montreal. The Lachine Canal is one of the city's best-kept secrets.</p>
+              <a href="destinations.html" class="read-more">Read Full Article</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:2.5rem;">
+          <a href="#" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--orange);color:#FFF;border-radius:var(--radius);font-family:'Oswald',sans-serif;">1</a>
+          <a href="#" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:#FFF;color:var(--text);border-radius:var(--radius);font-family:'Oswald',sans-serif;box-shadow:var(--shadow);">2</a>
+          <a href="#" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:#FFF;color:var(--text);border-radius:var(--radius);font-family:'Oswald',sans-serif;box-shadow:var(--shadow);">3</a>
+          <a href="#" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:#FFF;color:var(--text);border-radius:var(--radius);font-family:'Oswald',sans-serif;box-shadow:var(--shadow);">→</a>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <!-- Search -->
+        <div class="sidebar-widget">
+          <h4>Search</h4>
+          <div style="display:flex;gap:0;">
+            <input type="text" placeholder="Search articles..." style="flex:1;padding:0.6rem 1rem;border:1px solid #DDD;border-radius:var(--radius) 0 0 var(--radius);font-family:'Open Sans',sans-serif;font-size:0.9rem;"/>
+            <button style="padding:0.6rem 1rem;background:var(--orange);color:#FFF;border:none;border-radius:0 var(--radius) var(--radius) 0;cursor:pointer;">🔍</button>
+          </div>
+        </div>
+
+        <!-- Fishing Forecast -->
+        <div class="sidebar-widget forecast-widget">
+          <h4>🌡 Spring Forecast</h4>
+          <div class="forecast-row"><span>Water Temp</span><span class="val">14°C</span></div>
+          <div class="forecast-row"><span>Wind</span><span class="val">SW 12 km/h</span></div>
+          <div class="forecast-row"><span>Moon</span><span class="val">Waxing Gibbous</span></div>
+          <div class="forecast-row"><span>Best Times</span><span class="val">6 AM / 7:45 PM</span></div>
+          <div class="forecast-row"><span>Hot Species</span><span class="val">Pike & Walleye</span></div>
+          <div class="forecast-row"><span>Barometric</span><span class="val">Rising 102 kPa</span></div>
+        </div>
+
+        <!-- Popular Posts -->
+        <div class="sidebar-widget">
+          <h4>Popular Posts</h4>
+          <ul class="sidebar-list">
+            <li><a href="blog-post.html">5 Essential Fishing Knots (With Diagrams)</a></li>
+            <li><a href="destinations.html">Top 7 Fishing Spots Near Montreal</a></li>
+            <li><a href="gear.html">Best Spinning Reels Under $200 in 2026</a></li>
+            <li><a href="species.html">Walleye: Complete Quebec Guide</a></li>
+            <li><a href="recipes.html">Shore Lunch Walleye Recipe</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div class="sidebar-widget">
+          <h4>Categories</h4>
+          <ul class="sidebar-list">
+            <li style="display:flex;justify-content:space-between;"><a href="#">Techniques & Tactics</a><span style="color:#999;font-size:0.8rem;">24</span></li>
+            <li style="display:flex;justify-content:space-between;"><a href="#">Gear Reviews</a><span style="color:#999;font-size:0.8rem;">18</span></li>
+            <li style="display:flex;justify-content:space-between;"><a href="#">Local Spots</a><span style="color:#999;font-size:0.8rem;">15</span></li>
+            <li style="display:flex;justify-content:space-between;"><a href="#">Species Guides</a><span style="color:#999;font-size:0.8rem;">12</span></li>
+            <li style="display:flex;justify-content:space-between;"><a href="#">Recipes</a><span style="color:#999;font-size:0.8rem;">9</span></li>
+            <li style="display:flex;justify-content:space-between;"><a href="#">Conservation</a><span style="color:#999;font-size:0.8rem;">7</span></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="sidebar-widget" style="background:var(--orange);">
+          <h4 style="color:#FFF;border-color:rgba(255,255,255,0.4);">Weekly Fishing Report</h4>
+          <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:1rem;">Get local conditions, hot spots, and fresh articles every week.</p>
+          <form onsubmit="return false;" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <input type="email" placeholder="your@email.com" style="padding:0.65rem 1rem;border:none;border-radius:var(--radius);font-family:'Open Sans',sans-serif;"/>
+            <button style="padding:0.65rem;background:var(--dark);color:#FFF;border:none;border-radius:var(--radius);font-family:'Oswald',sans-serif;letter-spacing:1px;cursor:pointer;">SUBSCRIBE</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:1rem;display:inline-flex;">
+          <div class="logo-icon">🎣</div>
+          <div class="logo-text"><span class="logo-title">SUA</span><span class="logo-sub">Sub-Urban Anglers</span></div>
+        </a>
+        <p>Montreal's freshwater fishing community — tips, local spots, gear reviews, and more for urban anglers across Quebec.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">f</a><a href="#" class="social-link">📷</a>
+          <a href="#" class="social-link">▶</a><a href="#" class="social-link">♪</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Explore</h5><ul>
+        <li><a href="techniques.html">Techniques</a></li><li><a href="gear.html">Gear Reviews</a></li>
+        <li><a href="species.html">Species Guide</a></li><li><a href="destinations.html">Fishing Spots</a></li>
+        <li><a href="recipes.html">Recipes</a></li><li><a href="conservation.html">Conservation</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Community</h5><ul>
+        <li><a href="community.html">Forum</a></li><li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li><li><a href="about.html">About SUA</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Newsletter</h5>
+        <p style="font-size:0.9rem;margin-bottom:0.75rem;">Weekly fishing reports and local spot updates.</p>
+        <form class="newsletter-form" onsubmit="return false;"><input type="email" placeholder="your@email.com"/><button type="submit">→</button></form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="color:rgba(255,255,255,0.4);">© 2026 SUA Sub-Urban Anglers. Montreal, QC.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Affiliate Disclosure</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

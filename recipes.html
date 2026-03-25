@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fish Recipes | SUA Sub-Urban Anglers</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🎣</div>
+      <div class="logo-text"><span class="logo-title">SUA</span><span class="logo-sub">Sub-Urban Anglers</span></div>
+    </a>
+    <nav id="main-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="techniques.html" class="nav-link" data-dropdown>Learn to Fish <span class="arrow">▾</span></a>
+        <div class="dropdown"><a href="techniques.html">Techniques & Tactics</a><a href="blog-post.html">Knot Guide</a><a href="techniques.html#safety">Safety Tips</a><a href="species.html">Species Guide</a></div>
+      </div>
+      <div class="nav-item"><a href="gear.html" class="nav-link" data-dropdown>Gear <span class="arrow">▾</span></a>
+        <div class="dropdown"><a href="gear.html">Reviews</a><a href="gear.html#buyers-guides">Buyer's Guides</a></div>
+      </div>
+      <div class="nav-item"><a href="destinations.html" class="nav-link" data-dropdown>Destinations <span class="arrow">▾</span></a>
+        <div class="dropdown"><a href="destinations.html">Local Spots</a><a href="destinations.html#travel">Travel Guides</a></div>
+      </div>
+      <div class="nav-item"><a href="recipes.html" class="nav-link active">Recipes</a></div>
+      <div class="nav-item"><a href="conservation.html" class="nav-link">Conservation</a></div>
+      <div class="nav-item"><a href="shop.html" class="nav-link">Shop</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="community.html" class="nav-link nav-cta">Community</a></div>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero-sm">
+  <div class="hero-bg" style="background-image:url('https://picsum.photos/1600/600?random=500');"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-sm-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Recipes</span></div>
+      <h1>Fish Recipes & Cooking</h1>
+      <p>From shore lunches to home kitchen classics — honouring your catch from river to table.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED RECIPE -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Staff Favourite</span>
+      <h2>Featured Recipe</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
+      <img src="https://picsum.photos/700/500?random=501" alt="Walleye Recipe" style="width:100%;height:100%;object-fit:cover;min-height:400px;"/>
+      <div style="padding:2.5rem;">
+        <span class="card-tag tag-recipe">Classic</span>
+        <h2>Pan-Fried Walleye with Lemon Butter</h2>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;color:var(--rust);margin:0.75rem 0;">A Quebec shore lunch legend. Simple, fast, and unforgettable.</p>
+        <div class="recipe-time">
+          <span>⏱ Prep: 10 min</span>
+          <span>🔥 Cook: 12 min</span>
+          <span>🍽 Serves: 2</span>
+        </div>
+        <div class="recipe-card">
+          <div class="difficulty" style="margin-bottom:0.75rem;">
+            <span class="active"></span><span></span><span></span>
+            <span style="font-size:0.8rem;color:#777;margin-left:0.5rem;">Easy</span>
+          </div>
+        </div>
+        <h4>Ingredients</h4>
+        <ul style="font-size:0.9rem;padding-left:1rem;list-style:disc;margin:0.75rem 0;">
+          <li>2 walleye fillets (fresh, skin off)</li>
+          <li>½ cup all-purpose flour (seasoned with salt, pepper, and paprika)</li>
+          <li>3 tbsp butter</li>
+          <li>1 lemon (juice + zest)</li>
+          <li>2 cloves garlic, minced</li>
+          <li>Fresh parsley, chopped</li>
+          <li>Salt and pepper to taste</li>
+        </ul>
+        <h4>Method</h4>
+        <ol style="font-size:0.9rem;padding-left:1rem;margin:0.75rem 0;">
+          <li>Pat fillets dry and season. Dredge lightly in seasoned flour.</li>
+          <li>Heat butter in a cast iron pan over medium-high heat until foamy.</li>
+          <li>Add fillets — cook 3–4 minutes per side until golden and flaking.</li>
+          <li>Remove fish. Add garlic, lemon juice, and zest to the pan, stir 30 seconds.</li>
+          <li>Pour sauce over fillets, garnish with parsley. Serve immediately.</li>
+        </ol>
+        <a href="#" class="btn btn-primary mt-2">Print Recipe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL RECIPES -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">From Water to Table</span>
+      <h2>All Recipes</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="walleye">Walleye</button>
+      <button class="filter-tab" data-filter="pike">Pike</button>
+      <button class="filter-tab" data-filter="perch">Perch</button>
+      <button class="filter-tab" data-filter="trout">Trout</button>
+      <button class="filter-tab" data-filter="bass">Bass</button>
+    </div>
+    <div class="grid-3">
+      <div class="card recipe-card" data-category="walleye">
+        <img src="https://picsum.photos/600/400?random=510" alt="Walleye fry" class="card-img"/>
+        <div class="card-body">
+          <span class="card-tag tag-recipe">Walleye</span>
+          <div class="recipe-time"><span>⏱ 20 min</span><span>🍽 Serves 4</span></div>
+          <div class="difficulty"><span class="active"></span><span></span><span></span><span style="font-size:0.75rem;color:#777;margin-left:4px;">Easy</span></div>
+          <h4>Beer-Battered Walleye Fish & Chips</h4>
+          <p>The ultimate shore lunch upgrade. Light, crispy batter with Quebec craft beer. Serve with campfire fries and coleslaw.</p>
+          <a href="blog-post.html" class="read-more">Get Recipe</a>
+        </div>
+      </div>
+      <div class="card recipe-card" data-category="pike">
+        <img src="https://picsum.photos/600/400?random=511" alt="Pike" class="card-img"/>
+        <div class="card-body">
+          <span class="card-tag tag-recipe">Pike</span>
+          <div class="recipe-time"><span>⏱ 35 min</span><span>🍽 Serves 4</span></div>
+          <div class="difficulty"><span class="active"></span><span class="active"></span><span></span><span style="font-size:0.75rem;color:#777;margin-left:4px;">Medium</span></div>
+          <h4>Baked Northern Pike with Dill & Capers</h4>
+          <p>Pike has a bad reputation among anglers. It shouldn't. Baked whole with fresh dill, it rivals any table fish in Quebec.</p>
+          <a href="blog-post.html" class="read-more">Get Recipe</a>
+        </div>
+      </div>
+      <div class="card recipe-card" data-category="trout">
+        <img src="https://picsum.photos/600/400?random=512" alt="Smoked trout" class="card-img"/>
+        <div class="card-body">
+          <span class="card-tag tag-recipe">Trout</span>
+          <div class="recipe-time"><span>⏱ 4 hrs</span><span>🍽 Serves 6</span></div>
+          <div class="difficulty"><span class="active"></span><span class="active"></span><span class="active"></span><span style="font-size:0.75rem;color:#777;margin-left:4px;">Advanced</span></div>
+          <h4>Cold-Smoked Brook Trout Dip</h4>
+          <p>The perfect party appetizer. Hot-smoked Laurentian brook trout blended with cream cheese, capers, and fresh herbs.</p>
+          <a href="blog-post.html" class="read-more">Get Recipe</a>
+        </div>
+      </div>
+      <div class="card recipe-card" data-category="perch">
+        <img src="https://picsum.photos/600/400?random=513" alt="Perch" class="card-img"/>
+        <div class="card-body">
+          <span class="card-tag tag-recipe">Yellow Perch</span>
+          <div class="recipe-time"><span>⏱ 15 min</span><span>🍽 Serves 2</span></div>
+          <div class="difficulty"><span class="active"></span><span></span><span></span><span style="font-size:0.75rem;color:#777;margin-left:4px;">Easy</span></div>
+          <h4>Crispy Pan-Fried Yellow Perch</h4>
+          <p>Tiny fillets, big flavour. Perch from the Canal de Lachine fried in butter with lemon — ready in under 15 minutes.</p>
+          <a href="blog-post.html" class="read-more">Get Recipe</a>
+        </div>
+      </div>
+      <div class="card recipe-card" data-category="bass">
+        <img src="https://picsum.photos/600/400?random=514" alt="Bass" class="card-img"/>
+        <div class="card-body">
+          <span class="card-tag tag-recipe">Bass</span>
+          <div class="recipe-time"><span>⏱ 20 min</span><span>🍽 Serves 2</span></div>
+          <div class="difficulty"><span class="active"></span><span></span><span></span><span style="font-size:0.75rem;color:#777;margin-left:4px;">Easy</span></div>
+          <h4>Bass Fish Tacos with Mango Salsa</h4>
+          <p>Note: Most bass are released in Quebec — but if you keep one from a legal size, this is how to make it count. Fresh, summery tacos.</p>
+          <a href="blog-post.html" class="read-more">Get Recipe</a>
+        </div>
+      </div>
+      <div class="card recipe-card" data-category="walleye">
+        <img src="https://picsum.photos/600/400?random=515" alt="Shore lunch" class="card-img"/>
+        <div class="card-body">
+          <span class="card-tag tag-recipe">Shore Lunch</span>
+          <div class="recipe-time"><span>⏱ 25 min</span><span>🍽 Serves 4</span></div>
+          <div class="difficulty"><span class="active"></span><span></span><span></span><span style="font-size:0.75rem;color:#777;margin-left:4px;">Easy</span></div>
+          <h4>3-Ingredient Campfire Shore Lunch</h4>
+          <p>Butter, salt, and a cast iron pan. The purest way to eat a freshly caught walleye. No kitchen required.</p>
+          <a href="blog-post.html" class="read-more">Get Recipe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILLETING GUIDE -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">Before You Cook</span>
+      <h2>How to Fillet a Fish</h2>
+      <div class="divider"></div>
+      <p>Every recipe starts with a good fillet. Here's the step-by-step process for common Quebec freshwater species.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="padding:1.5rem;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:0.75rem;">🔪</div>
+        <h4>Step 1 — Score Behind the Head</h4>
+        <p style="color:#666;font-size:0.9rem;">Make a diagonal cut behind the pectoral fin down to the spine. Don't cut through the spine.</p>
+      </div>
+      <div class="card" style="padding:1.5rem;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:0.75rem;">🗡</div>
+        <h4>Step 2 — Run Along the Spine</h4>
+        <p style="color:#666;font-size:0.9rem;">Turn the blade flat and run it along the spine from head to tail. Let the ribs guide your blade.</p>
+      </div>
+      <div class="card" style="padding:1.5rem;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:0.75rem;">🐟</div>
+        <h4>Step 3 — Remove the Skin</h4>
+        <p style="color:#666;font-size:0.9rem;">Hold the tail of the fillet, insert the blade between meat and skin at a shallow angle, and pull the skin away.</p>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <a href="blog-post.html" class="btn btn-primary">Full Video Guide: How to Fillet Walleye, Pike & Perch</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:1rem;display:inline-flex;">
+          <div class="logo-icon">🎣</div>
+          <div class="logo-text"><span class="logo-title">SUA</span><span class="logo-sub">Sub-Urban Anglers</span></div>
+        </a>
+        <p>Montreal's freshwater fishing community.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">f</a><a href="#" class="social-link">📷</a>
+          <a href="#" class="social-link">▶</a><a href="#" class="social-link">♪</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Explore</h5><ul>
+        <li><a href="techniques.html">Techniques</a></li><li><a href="gear.html">Gear Reviews</a></li>
+        <li><a href="species.html">Species Guide</a></li><li><a href="destinations.html">Fishing Spots</a></li>
+        <li><a href="recipes.html">Recipes</a></li><li><a href="conservation.html">Conservation</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Community</h5><ul>
+        <li><a href="community.html">Forum</a></li><li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li><li><a href="about.html">About SUA</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Newsletter</h5>
+        <form class="newsletter-form" onsubmit="return false;"><input type="email" placeholder="your@email.com"/><button type="submit">→</button></form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="color:rgba(255,255,255,0.4);">© 2026 SUA Sub-Urban Anglers. Montreal, QC.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Affiliate Disclosure</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

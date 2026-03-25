@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Forum | SUA Sub-Urban Anglers</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🎣</div>
+      <div class="logo-text"><span class="logo-title">SUA</span><span class="logo-sub">Sub-Urban Anglers</span></div>
+    </a>
+    <nav id="main-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="techniques.html" class="nav-link" data-dropdown>Learn to Fish <span class="arrow">▾</span></a>
+        <div class="dropdown"><a href="techniques.html">Techniques & Tactics</a><a href="blog-post.html">Knot Guide</a><a href="techniques.html#safety">Safety Tips</a><a href="species.html">Species Guide</a></div>
+      </div>
+      <div class="nav-item"><a href="gear.html" class="nav-link" data-dropdown>Gear <span class="arrow">▾</span></a>
+        <div class="dropdown"><a href="gear.html">Reviews</a><a href="gear.html#buyers-guides">Buyer's Guides</a></div>
+      </div>
+      <div class="nav-item"><a href="destinations.html" class="nav-link" data-dropdown>Destinations <span class="arrow">▾</span></a>
+        <div class="dropdown"><a href="destinations.html">Local Spots</a><a href="destinations.html#travel">Travel Guides</a></div>
+      </div>
+      <div class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></div>
+      <div class="nav-item"><a href="conservation.html" class="nav-link">Conservation</a></div>
+      <div class="nav-item"><a href="shop.html" class="nav-link">Shop</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="community.html" class="nav-link active nav-cta">Community</a></div>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero-sm" style="background:var(--blue);">
+  <div class="hero-bg" style="background-image:url('https://picsum.photos/1600/600?random=800');opacity:0.25;"></div>
+  <div class="container">
+    <div class="hero-sm-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Community</span></div>
+      <h1>SUA Community Forum</h1>
+      <p>Share reports, swap spots, post your catches, and connect with 500+ Montreal-area anglers.</p>
+      <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;">
+        <a href="#post-form" class="btn btn-primary">Start a Thread</a>
+        <a href="#catch-wall" class="btn btn-outline" style="color:#FFF;border-color:rgba(255,255,255,0.5);">Catch of the Day Wall</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY STATS -->
+<div style="background:var(--dark);padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div class="container">
+    <div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:1rem;">
+      <div style="text-align:center;color:#FFF;">
+        <span style="font-family:'Oswald',sans-serif;font-size:1.8rem;color:var(--orange);">543</span>
+        <span style="display:block;font-size:0.8rem;color:rgba(255,255,255,0.5);">Members</span>
+      </div>
+      <div style="text-align:center;color:#FFF;">
+        <span style="font-family:'Oswald',sans-serif;font-size:1.8rem;color:var(--orange);">1,247</span>
+        <span style="display:block;font-size:0.8rem;color:rgba(255,255,255,0.5);">Posts</span>
+      </div>
+      <div style="text-align:center;color:#FFF;">
+        <span style="font-family:'Oswald',sans-serif;font-size:1.8rem;color:var(--orange);">312</span>
+        <span style="display:block;font-size:0.8rem;color:rgba(255,255,255,0.5);">Catch Photos</span>
+      </div>
+      <div style="text-align:center;color:#FFF;">
+        <span style="font-family:'Oswald',sans-serif;font-size:1.8rem;color:var(--yellow);">🟢 Live</span>
+        <span style="display:block;font-size:0.8rem;color:rgba(255,255,255,0.5);">12 Members Online Now</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN FORUM CONTENT -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="forum-layout">
+
+      <!-- MAIN CONTENT -->
+      <div>
+        <!-- Forum Categories -->
+        <div class="section-header">
+          <span class="section-label">Browse</span>
+          <h2>Forum Categories</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="forum-categories">
+          <div class="forum-cat">
+            <div class="fc-icon fc-orange">🎣</div>
+            <div>
+              <h4>Fishing Reports</h4>
+              <p>Post current water conditions, what's biting, and where. Updated daily by members.</p>
+            </div>
+            <div class="fc-stats">
+              <strong>187</strong>
+              <span>threads</span>
+            </div>
+          </div>
+          <div class="forum-cat">
+            <div class="fc-icon fc-blue">📍</div>
+            <div>
+              <h4>Local Spots & Launches</h4>
+              <p>Discuss public access points, kayak launches, and conditions at Montreal-area spots.</p>
+            </div>
+            <div class="fc-stats">
+              <strong>94</strong>
+              <span>threads</span>
+            </div>
+          </div>
+          <div class="forum-cat">
+            <div class="fc-icon fc-green">⚙️</div>
+            <div>
+              <h4>Gear Talk</h4>
+              <p>Rod, reel, lure recommendations. Ask before you buy — the community has tried it all.</p>
+            </div>
+            <div class="fc-stats">
+              <strong>213</strong>
+              <span>threads</span>
+            </div>
+          </div>
+          <div class="forum-cat">
+            <div class="fc-icon fc-olive">🐟</div>
+            <div>
+              <h4>Species & Tactics</h4>
+              <p>Technique discussions organized by species — pike, walleye, bass, trout, and more.</p>
+            </div>
+            <div class="fc-stats">
+              <strong>156</strong>
+              <span>threads</span>
+            </div>
+          </div>
+          <div class="forum-cat">
+            <div class="fc-icon fc-orange">🌿</div>
+            <div>
+              <h4>Conservation & Regulations</h4>
+              <p>Quebec regulations, invasive species sightings, ethical angling discussions.</p>
+            </div>
+            <div class="fc-stats">
+              <strong>42</strong>
+              <span>threads</span>
+            </div>
+          </div>
+          <div class="forum-cat">
+            <div class="fc-icon fc-blue">😂</div>
+            <div>
+              <h4>"The One That Got Away"</h4>
+              <p>Your best fishing failure stories. We've all been there. Commiserate here.</p>
+            </div>
+            <div class="fc-stats">
+              <strong>67</strong>
+              <span>threads</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Threads -->
+        <div class="section-header" style="margin-top:3rem;">
+          <span class="section-label">Latest Activity</span>
+          <h2>Recent Threads</h2>
+          <div class="divider"></div>
+        </div>
+        <div>
+          <div class="thread-item">
+            <div>
+              <div class="thread-title"><a href="#">🔴 LIVE REPORT — Lac Saint-Louis: Pike active in the shallows this AM (March 25)</a></div>
+              <div class="thread-meta">By <strong>PaddleAngler_MTL</strong> · Fishing Reports · 2 hours ago</div>
+            </div>
+            <div class="thread-stats">
+              <strong>24</strong>
+              <span>replies</span>
+            </div>
+          </div>
+          <div class="thread-item">
+            <div>
+              <div class="thread-title"><a href="#">Mille-Îles ice-out — who's hit it yet this year?</a></div>
+              <div class="thread-meta">By <strong>LavalFisher</strong> · Fishing Reports · 5 hours ago</div>
+            </div>
+            <div class="thread-stats"><strong>11</strong><span>replies</span></div>
+          </div>
+          <div class="thread-item">
+            <div>
+              <div class="thread-title"><a href="#">Best jig head weight for walleye jigging on the St. Lawrence in spring current?</a></div>
+              <div class="thread-meta">By <strong>WalleyeWatcher</strong> · Species & Tactics · Yesterday</div>
+            </div>
+            <div class="thread-stats"><strong>8</strong><span>replies</span></div>
+          </div>
+          <div class="thread-item">
+            <div>
+              <div class="thread-title"><a href="#">Shimano Stradic vs. Daiwa Fuego — worth the price difference for pike?</a></div>
+              <div class="thread-meta">By <strong>GearHead_QC</strong> · Gear Talk · Yesterday</div>
+            </div>
+            <div class="thread-stats"><strong>19</strong><span>replies</span></div>
+          </div>
+          <div class="thread-item">
+            <div>
+              <div class="thread-title"><a href="#">Round goby spotted in the Richelieu — third confirmed sighting this month</a></div>
+              <div class="thread-meta">By <strong>SUA_Admin</strong> · Conservation · 2 days ago</div>
+            </div>
+            <div class="thread-stats"><strong>6</strong><span>replies</span></div>
+          </div>
+          <div class="thread-item">
+            <div>
+              <div class="thread-title"><a href="#">Lost a 15+ lb pike at the boat due to a bad hook set. At the bow of my kayak. I need to scream into the void.</a></div>
+              <div class="thread-meta">By <strong>TrophyHunterMTL</strong> · "One That Got Away" · 3 days ago</div>
+            </div>
+            <div class="thread-stats"><strong>34</strong><span>replies</span></div>
+          </div>
+          <div class="thread-item">
+            <div>
+              <div class="thread-title"><a href="#">New kayak launch at Pointe-Calumet — full report and photos</a></div>
+              <div class="thread-meta">By <strong>KayakQC</strong> · Local Spots · 4 days ago</div>
+            </div>
+            <div class="thread-stats"><strong>15</strong><span>replies</span></div>
+          </div>
+        </div>
+
+        <!-- POST FORM -->
+        <div id="post-form" style="margin-top:3rem;">
+          <div class="post-form" id="community-post-form">
+            <h3>Start a New Thread</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name / Username</label>
+                <input type="text" placeholder="AnonymousAngler123"/>
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select>
+                  <option>Select a category...</option>
+                  <option>Fishing Reports</option>
+                  <option>Local Spots & Launches</option>
+                  <option>Gear Talk</option>
+                  <option>Species & Tactics</option>
+                  <option>Conservation & Regulations</option>
+                  <option>"The One That Got Away"</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Thread Title</label>
+              <input type="text" placeholder="e.g. Pike biting on Mille-Îles — morning report March 25"/>
+            </div>
+            <div class="form-group">
+              <label>Your Post</label>
+              <textarea placeholder="Share your fishing report, question, or story here. Be specific — what water, what species, what time, what worked?"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Attach a Photo (optional)</label>
+              <input type="file" accept="image/*" style="padding:0.5rem;background:var(--cream);"/>
+            </div>
+            <button class="btn btn-primary" type="submit">Post Thread</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <!-- Active members -->
+        <div class="sidebar-widget">
+          <h4>🟢 Online Now</h4>
+          <ul class="sidebar-list">
+            <li style="display:flex;align-items:center;gap:0.5rem;"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></span>PaddleAngler_MTL</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></span>LavalFisher</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></span>WalleyeWatcher</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></span>TrophyHunterMTL</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></span>+ 8 more</li>
+          </ul>
+        </div>
+
+        <!-- Forecast -->
+        <div class="sidebar-widget forecast-widget">
+          <h4>🌡 Today's Conditions</h4>
+          <div class="forecast-row"><span>Water Temp</span><span class="val">14°C</span></div>
+          <div class="forecast-row"><span>Wind</span><span class="val">SW 12 km/h</span></div>
+          <div class="forecast-row"><span>Moon</span><span class="val">Waxing Gibbous</span></div>
+          <div class="forecast-row"><span>Best Times</span><span class="val">6 AM & 7:45 PM</span></div>
+          <div class="forecast-row"><span>Hot Species</span><span class="val">Pike & Walleye</span></div>
+        </div>
+
+        <!-- Top contributors -->
+        <div class="sidebar-widget">
+          <h4>Top Contributors</h4>
+          <ul class="sidebar-list">
+            <li style="display:flex;justify-content:space-between;align-items:center;">
+              <span>🥇 PaddleAngler_MTL</span><span style="font-size:0.8rem;color:var(--orange);font-family:'Oswald',sans-serif;">247 posts</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;align-items:center;">
+              <span>🥈 WalleyeWatcher</span><span style="font-size:0.8rem;color:var(--orange);font-family:'Oswald',sans-serif;">198 posts</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;align-items:center;">
+              <span>🥉 LavalFisher</span><span style="font-size:0.8rem;color:var(--orange);font-family:'Oswald',sans-serif;">167 posts</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;align-items:center;">
+              <span>GearHead_QC</span><span style="font-size:0.8rem;color:var(--orange);font-family:'Oswald',sans-serif;">134 posts</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;align-items:center;">
+              <span>SUA_Admin</span><span style="font-size:0.8rem;color:var(--orange);font-family:'Oswald',sans-serif;">122 posts</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Community rules -->
+        <div class="sidebar-widget" style="background:var(--light);">
+          <h4>Community Rules</h4>
+          <ul style="font-size:0.85rem;color:#666;display:grid;gap:0.5rem;padding-left:1rem;list-style:disc;">
+            <li>Be respectful to all anglers, regardless of experience level.</li>
+            <li>Fishing spot info shared here stays here — no mass sharing.</li>
+            <li>Include location, species, and conditions in fishing reports.</li>
+            <li>No selling of gear in threads — use the Shop page.</li>
+            <li>Respect Quebec fishing regulations — no posts encouraging violations.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CATCH OF THE DAY WALL -->
+<section id="catch-wall" class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Community</span>
+      <h2>Catch of the Day Wall</h2>
+      <div class="divider"></div>
+      <p>Submit your catches — every fish gets a spot on the wall.</p>
+    </div>
+    <div class="catch-wall">
+      <div class="catch-photo">
+        <img src="https://picsum.photos/400/300?random=810" alt="Catch"/>
+        <div class="catch-photo-info">
+          <strong>PaddleAngler_MTL</strong><br/>
+          14 lb Northern Pike — Mille-Îles · March 20
+        </div>
+      </div>
+      <div class="catch-photo">
+        <img src="https://picsum.photos/400/300?random=811" alt="Catch"/>
+        <div class="catch-photo-info">
+          <strong>Sophie L.</strong><br/>
+          6.2 lb Walleye — St. Lawrence · March 18
+        </div>
+      </div>
+      <div class="catch-photo">
+        <img src="https://picsum.photos/400/300?random=812" alt="Catch"/>
+        <div class="catch-photo-info">
+          <strong>WalleyeWatcher</strong><br/>
+          4.8 lb Smallmouth Bass — Richelieu · March 15
+        </div>
+      </div>
+      <div class="catch-photo">
+        <img src="https://picsum.photos/400/300?random=813" alt="Catch"/>
+        <div class="catch-photo-info">
+          <strong>LavalFisher</strong><br/>
+          Double limit — Yellow Perch — Canal Lachine · March 12
+        </div>
+      </div>
+      <div class="catch-photo">
+        <img src="https://picsum.photos/400/300?random=814" alt="Catch"/>
+        <div class="catch-photo-info">
+          <strong>Marc T.</strong><br/>
+          7.5 lb Walleye — Lac Saint-François · March 10
+        </div>
+      </div>
+      <div class="catch-photo">
+        <img src="https://picsum.photos/400/300?random=815" alt="Catch"/>
+        <div class="catch-photo-info">
+          <strong>GearHead_QC</strong><br/>
+          5.1 lb Largemouth — Lac Saint-Louis · March 8
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit catch form -->
+    <div style="background:var(--white);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);margin-top:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;">
+      <h3 style="margin-bottom:1.5rem;">Submit Your Catch</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Display name"/>
+        </div>
+        <div class="form-group">
+          <label>Species</label>
+          <select>
+            <option>Select species...</option>
+            <option>Northern Pike</option>
+            <option>Walleye</option>
+            <option>Largemouth Bass</option>
+            <option>Smallmouth Bass</option>
+            <option>Yellow Perch</option>
+            <option>Brook Trout</option>
+            <option>Channel Catfish</option>
+            <option>Muskie</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Weight / Size</label>
+          <input type="text" placeholder="e.g. 14 lbs / 90 cm"/>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" placeholder="e.g. Lac Saint-Louis, West End"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Photo</label>
+        <input type="file" accept="image/*" style="padding:0.5rem;background:var(--cream);width:100%;border-radius:var(--radius);border:1px solid #DDD;"/>
+      </div>
+      <div class="form-group">
+        <label>Caption / Story (optional)</label>
+        <textarea placeholder="What were you using? Any tips for this spot?"></textarea>
+      </div>
+      <button class="btn btn-primary">Submit Catch</button>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:1rem;display:inline-flex;">
+          <div class="logo-icon">🎣</div>
+          <div class="logo-text"><span class="logo-title">SUA</span><span class="logo-sub">Sub-Urban Anglers</span></div>
+        </a>
+        <p>Montreal's freshwater fishing community.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">f</a><a href="#" class="social-link">📷</a>
+          <a href="#" class="social-link">▶</a><a href="#" class="social-link">♪</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Explore</h5><ul>
+        <li><a href="techniques.html">Techniques</a></li><li><a href="gear.html">Gear Reviews</a></li>
+        <li><a href="species.html">Species Guide</a></li><li><a href="destinations.html">Fishing Spots</a></li>
+        <li><a href="recipes.html">Recipes</a></li><li><a href="conservation.html">Conservation</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Community</h5><ul>
+        <li><a href="community.html">Forum</a></li><li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li><li><a href="about.html">About SUA</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Newsletter</h5>
+        <form class="newsletter-form" onsubmit="return false;"><input type="email" placeholder="your@email.com"/><button type="submit">→</button></form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="color:rgba(255,255,255,0.4);">© 2026 SUA Sub-Urban Anglers. Montreal, QC.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Affiliate Disclosure</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
