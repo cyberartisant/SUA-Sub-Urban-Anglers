@@ -331,9 +331,23 @@ h4 { font-size: 1.2rem; }
   max-width: 750px;
   padding: 2rem 1.5rem;
 }
-.hero-content .section-label { color: var(--yellow); }
-.hero-content h1 { color: var(--white); margin-bottom: 1.25rem; }
-.hero-content p  { color: rgba(255,255,255,0.85); font-size: 1.15rem; margin-bottom: 2rem; max-width: 560px; }
+.hero-content .section-label {
+  color: var(--yellow);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.hero-content h1 {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.hero-content p {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  max-width: 560px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 .hero-sm {
