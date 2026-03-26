@@ -74,11 +74,13 @@ h4 { font-size: 1.2rem; }
 
 /* ── Layout ── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-.section    { padding: 5rem 0; }
-.section-sm { padding: 3rem 0; }
+.section    { padding: 5rem 0; position: relative; z-index: 1; }
+.section-sm { padding: 3rem 0; position: relative; z-index: 1; }
 
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-3-centered { justify-items: center; }
+.grid-3-centered > * { width: 100%; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 
 .flex        { display: flex; }
@@ -301,26 +303,30 @@ h4 { font-size: 1.2rem; }
    HERO SECTIONS
    ============================================ */
 .hero {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 0;
   min-height: 90vh;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  justify-content: flex-start;
   background: var(--dark);
 }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://picsum.photos/1600/900?random=10');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  pointer-events: none;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(28,28,28,0.9) 0%, rgba(204,85,0,0.4) 100%);
 }
+.hero .container { margin-left: 0; }
 .hero-content {
   position: relative;
   z-index: 2;
@@ -430,6 +436,8 @@ h4 { font-size: 1.2rem; }
 
 /* Fishing Forecast Bar */
 .forecast-bar {
+  position: relative;
+  z-index: 1;
   background: var(--olive);
   padding: 1rem 0;
 }
@@ -459,7 +467,7 @@ h4 { font-size: 1.2rem; }
 .forecast-item .fi-value { font-family: 'Oswald', sans-serif; font-size: 0.95rem; }
 
 /* Stats Strip */
-.stats-strip { background: var(--orange); }
+.stats-strip { background: var(--orange); position: relative; z-index: 1; }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -496,6 +504,8 @@ h4 { font-size: 1.2rem; }
 
 /* CTA Band */
 .cta-band {
+  position: relative;
+  z-index: 1;
   background: linear-gradient(135deg, var(--dark) 0%, var(--olive) 100%);
   padding: 5rem 0;
   text-align: center;
@@ -775,7 +785,7 @@ h4 { font-size: 1.2rem; }
 }
 .species-card img {
   width: 100%;
-  height: 250px;
+  height: 190px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -1086,6 +1096,8 @@ h4 { font-size: 1.2rem; }
    FOOTER
    ============================================ */
 #site-footer {
+  position: relative;
+  z-index: 1;
   background: var(--dark);
   color: rgba(255,255,255,0.7);
   padding-top: 4rem;
