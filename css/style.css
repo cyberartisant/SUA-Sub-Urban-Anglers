@@ -318,13 +318,11 @@ h4 { font-size: 1.2rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
   pointer-events: none;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(28,28,28,0.9) 0%, rgba(204,85,0,0.4) 100%);
 }
 .hero .container { margin-left: 0; }
 .hero-content {
