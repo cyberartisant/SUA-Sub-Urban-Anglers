@@ -65,7 +65,8 @@ function getMoonPhase() {
   const cycle = 29.53058867; // days
   const age = (((Date.now() - knownNewMoon) / 86400000) % cycle + cycle) % cycle;
   const idx = Math.round((age / cycle) * 8) % 8;
-  return { ...phases[idx], age };
+  const illumination = Math.round((1 - Math.cos(2 * Math.PI * age / cycle)) / 2 * 100);
+  return { ...phases[idx], age, illumination };
 }
 
 // ── Solunar peak times (major feeding periods) ──
@@ -109,7 +110,7 @@ async function updateForecastBar() {
   }
 
   set('fc-moon-icon', moon.icon);
-  set('fc-moon',      moon.name);
+  set('fc-moon',      `${moon.name} ${moon.illumination}%`);
   set('fc-times',     getSolunarTimes());
   set('fc-species',   getHotSpecies());
 }
