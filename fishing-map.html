@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Montreal Fishing Map – Fishing Lodge</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFF2E0;
+    color: #2c2c2a;
+    font-size: 15px;
+  }
+
+  header {
+    background-color: #CC5500;
+    padding: 28px 24px 22px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #FFF2E0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  header p {
+    color: #FFB347;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  .toolbar {
+    background: #3a3830;
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toolbar-label {
+    color: #FFB347;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 4px;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .filter-btn.all    { background: #FF6B35; color: #fff; border-color: #FF6B35; }
+  .filter-btn.bass   { background: #3A6EA5; color: #fff; border-color: #3A6EA5; }
+  .filter-btn.walleye{ background: #FFB347; color: #3a3830; border-color: #FFB347; }
+  .filter-btn.pike   { background: #5A633E; color: #fff; border-color: #5A633E; }
+  .filter-btn.muskie { background: #8B3A3A; color: #fff; border-color: #8B3A3A; }
+
+  .filter-btn.inactive {
+    background: transparent !important;
+    color: #ccc !important;
+  }
+
+  .filter-btn.bass.inactive   { border-color: #3A6EA5; color: #3A6EA5 !important; }
+  .filter-btn.walleye.inactive{ border-color: #FFB347; color: #FFB347 !important; }
+  .filter-btn.pike.inactive   { border-color: #5A633E; color: #5A633E !important; }
+  .filter-btn.muskie.inactive { border-color: #8B3A3A; color: #8B3A3A !important; }
+  .filter-btn.all.inactive    { border-color: #FF6B35; color: #FF6B35 !important; }
+
+  #map {
+    width: 100%;
+    height: calc(100vh, 200px);
+    min-height: 480px;
+  }
+
+  .api-notice {
+    display: none;
+    background: #fff8f0;
+    border: 2px dashed #FFB347;
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+    margin: 32px auto;
+    max-width: 620px;
+  }
+
+  .api-notice h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #CC5500;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .api-notice p {
+    color: #5a4a30;
+    margin-bottom: 10px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .api-notice code {
+    background: #FFF2E0;
+    border: 1px solid #FFB347;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+    color: #CC5500;
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  /* Google Maps info window override */
+  .gm-style .gm-style-iw-c {
+    border-radius: 10px !important;
+    padding: 0 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18) !important;
+  }
+  .gm-style .gm-style-iw-d {
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+  .gm-style .gm-ui-hover-effect { top: 4px !important; right: 4px !important; }
+
+  .popup {
+    font-family: 'Open Sans', sans-serif;
+    width: 240px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .popup-header {
+    padding: 12px 16px 10px;
+    color: #fff;
+  }
+
+  .popup-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 2px;
+  }
+
+  .popup-header .species-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .popup-body {
+    padding: 12px 16px 14px;
+    background: #fff;
+  }
+
+  .popup-body p {
+    font-size: 0.82rem;
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .popup-body .detail-row {
+    display: flex;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: #666;
+    margin-bottom: 4px;
+    align-items: flex-start;
+  }
+
+  .popup-body .detail-row .icon { flex-shrink: 0; }
+
+  .popup-body .affiliate-link {
+    display: block;
+    margin-top: 10px;
+    background: #FF6B35;
+    color: #fff;
+    text-align: center;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .spot-count {
+    color: #9a9890;
+    font-size: 0.78rem;
+    margin-left: auto;
+  }
+
+  footer {
+    background: #3a3830;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.8rem;
+    color: #9a9890;
+  }
+
+  footer a { color: #FFB347; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎣 Montreal Region Fishing Map</h1>
+  <p>Discover the best fishing spots around Montreal, Bass, Walleye, Pike &amp; Muskie</p>
+</header>
+
+<div class="toolbar">
+  <span class="toolbar-label">Filter by species:</span>
+  <button class="filter-btn all" onclick="filterMarkers('all')">🐟 All Spots</button>
+  <button class="filter-btn bass" onclick="filterMarkers('bass')">🎣 Largemouth Bass</button>
+  <button class="filter-btn walleye" onclick="filterMarkers('walleye')">🐠 Walleye</button>
+  <button class="filter-btn pike" onclick="filterMarkers('pike')">🐟 Northern Pike</button>
+  <button class="filter-btn muskie" onclick="filterMarkers('muskie')">🦈 Muskie</button>
+  <span class="spot-count" id="spot-count">Showing 12 spots</span>
+</div>
+
+<div id="map"></div>
+
+<div class="api-notice" id="api-notice">
+  <h2>Add Your Google Maps API Key</h2>
+  <p>To display the interactive map, replace <strong>YOUR_API_KEY</strong> in the script tag at the bottom of this file with your actual Google Maps API key.</p>
+  <p>Get a free key at:<br><code>console.cloud.google.com</code></p>
+  <p>Then enable the <strong>Maps JavaScript API</strong> in your project. The $200/month free credit covers thousands of map loads.</p>
+</div>
+
+<footer>
+  <p>&copy; 2026 Fishing Lodge &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms-of-use.html">Terms of Use</a> &nbsp;|&nbsp; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></p>
+</footer>
+
+<script>
+const SPOTS = [
+  {
+    name: "Lac des Deux Montagnes",
+    lat: 45.4833, lng: -73.9833,
+    species: "muskie",
+    tip: "Trophy muskie territory. Best in early morning near weed edges.",
+    season: "June – October",
+    technique: "Large glide baits & jerk baits",
+    affiliate: "#"
+  },
+  {
+    name: "Rivière des Prairies – Laval",
+    lat: 45.5800, lng: -73.7200,
+    species: "bass",
+    tip: "Excellent largemouth bass in shallow bays. Accessible from shore.",
+    season: "May – September",
+    technique: "Topwater frogs, Texas-rigged plastics",
+    affiliate: "#"
+  },
+  {
+    name: "Lac Saint-Louis",
+    lat: 45.4200, lng: -73.8200,
+    species: "walleye",
+    tip: "Great walleye at dawn along the deeper channel edges.",
+    season: "April – November",
+    technique: "Jigging with minnows or paddle tails",
+    affiliate: "#"
+  },
+  {
+    name: "Fleuve Saint-Laurent – Varennes",
+    lat: 45.7100, lng: -73.4300,
+    species: "pike",
+    tip: "Northern pike lurk in the backwater bays. Great spring fishery.",
+    season: "April – June, September",
+    technique: "Spinnerbaits, spoons, jerk baits",
+    affiliate: "#"
+  },
+  {
+    name: "Lac Memphrémagog (North End)",
+    lat: 45.1200, lng: -72.2500,
+    species: "muskie",
+    tip: "Renowned muskie lake. Fish the rocky points at dusk.",
+    season: "July – October",
+    technique: "Figure-eight with large bucktails",
+    affiliate: "#"
+  },
+  {
+    name: "Rivière Richelieu – Chambly",
+    lat: 45.4500, lng: -73.2900,
+    species: "bass",
+    tip: "Smallmouth and largemouth bass along rocky stretches below the rapids.",
+    season: "May – October",
+    technique: "Drop shot, ned rig, crankbaits",
+    affiliate: "#"
+  },
+  {
+    name: "Lac Brome",
+    lat: 45.2000, lng: -72.5300,
+    species: "walleye",
+    tip: "Productive walleye lake. Fish structure along the deeper basin.",
+    season: "May – October",
+    technique: "Walleye spinners, live minnows",
+    affiliate: "#"
+  },
+  {
+    name: "Lac des Îles – Laurentians",
+    lat: 46.1000, lng: -74.6000,
+    species: "pike",
+    tip: "Classic Laurentian pike lake. Weedy bays produce big fish.",
+    season: "May – September",
+    technique: "Large swimbaits, topwater lures",
+    affiliate: "#"
+  },
+  {
+    name: "Fleuve Saint-Laurent – Contrecoeur",
+    lat: 45.8600, lng: -73.2400,
+    species: "walleye",
+    tip: "Excellent walleye run in spring along the main river channel.",
+    season: "April – June",
+    technique: "Bottom bouncing with nightcrawlers",
+    affiliate: "#"
+  },
+  {
+    name: "Lac Maskinongé",
+    lat: 46.2300, lng: -73.0500,
+    species: "muskie",
+    tip: "Named after the muskie (maskinongé in French). A bucket-list lake.",
+    season: "July – October",
+    technique: "Troll large crankbaits along weed edges",
+    affiliate: "#"
+  },
+  {
+    name: "Rivière L'Assomption",
+    lat: 45.8300, lng: -73.4800,
+    species: "bass",
+    tip: "Smallmouth bass along rocky runs. Good bank fishing access.",
+    season: "June – September",
+    technique: "Crayfish imitations, tube jigs",
+    affiliate: "#"
+  },
+  {
+    name: "Lac Saint-Pierre",
+    lat: 46.2000, lng: -72.8500,
+    species: "pike",
+    tip: "UNESCO Biosphere Reserve. Massive shallow flats hold huge pike.",
+    season: "April – October",
+    technique: "Large spinnerbaits, soft swimbaits",
+    affiliate: "#"
+  }
+];
+
+const SPECIES_CONFIG = {
+  bass:    { color: "#3A6EA5", label: "Largemouth Bass", gear: "Shop Bass Gear →" },
+  walleye: { color: "#e8970a", label: "Walleye",         gear: "Shop Walleye Gear →" },
+  pike:    { color: "#5A633E", label: "Northern Pike",   gear: "Shop Pike Gear →" },
+  muskie:  { color: "#8B3A3A", label: "Muskie",          gear: "Shop Muskie Gear →" }
+};
+
+let map, markers = [], infoWindow, activeFilter = 'all';
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 45.72, lng: -73.40 },
+    zoom: 8,
+    mapTypeId: 'hybrid',
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+      position: google.maps.ControlPosition.TOP_RIGHT
+    },
+    streetViewControl: false,
+    fullscreenControl: true,
+    styles: [
+      { featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] }
+    ]
+  });
+
+  infoWindow = new google.maps.InfoWindow();
+
+  SPOTS.forEach(spot => {
+    const cfg = SPECIES_CONFIG[spot.species];
+
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 42">
+      <path d="M16 0C7.16 0 0 7.16 0 16c0 10.55 14 26 16 26s16-15.45 16-26C32 7.16 24.84 0 16 0z" fill="${cfg.color}" stroke="#fff" stroke-width="2"/>
+      <text x="16" y="22" text-anchor="middle" font-size="14" fill="#fff">🎣</text>
+    </svg>`;
+
+    const icon = {
+      url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg),
+      scaledSize: new google.maps.Size(32, 42),
+      anchor: new google.maps.Point(16, 42)
+    };
+
+    const marker = new google.maps.Marker({
+      position: { lat: spot.lat, lng: spot.lng },
+      map,
+      title: spot.name,
+      icon,
+      species: spot.species
+    });
+
+    marker.addListener('click', () => {
+      const cfg = SPECIES_CONFIG[spot.species];
+      infoWindow.setContent(`
+        <div class="popup">
+          <div class="popup-header" style="background:${cfg.color};">
+            <h3>${spot.name}</h3>
+            <span class="species-badge">${cfg.label}</span>
+          </div>
+          <div class="popup-body">
+            <p>${spot.tip}</p>
+            <div class="detail-row"><span class="icon">📅</span><span><strong>Season:</strong> ${spot.season}</span></div>
+            <div class="detail-row"><span class="icon">🪝</span><span><strong>Technique:</strong> ${spot.technique}</span></div>
+            <a class="affiliate-link" href="${spot.affiliate}" target="_blank">${cfg.gear}</a>
+          </div>
+        </div>
+      `);
+      infoWindow.open(map, marker);
+    });
+
+    markers.push({ marker, species: spot.species });
+  });
+
+  updateCount();
+}
+
+function filterMarkers(species) {
+  activeFilter = species;
+  infoWindow.close();
+
+  markers.forEach(({ marker, species: s }) => {
+    const visible = species === 'all' || s === species;
+    marker.setVisible(visible);
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('inactive');
+    if (species !== 'all' && !btn.classList.contains(species) && !btn.classList.contains('all')) {
+      btn.classList.add('inactive');
+    }
+    if (species === 'all' && btn.classList.contains('all')) {
+      btn.classList.remove('inactive');
+    }
+  });
+
+  updateCount();
+}
+
+function updateCount() {
+  const visible = activeFilter === 'all'
+    ? markers.length
+    : markers.filter(m => m.species === activeFilter).length;
+  document.getElementById('spot-count').textContent = `Showing ${visible} spot${visible !== 1 ? 's' : ''}`;
+}
+
+window.initMap = initMap;
+</script>
+
+<!-- REPLACE YOUR_API_KEY BELOW WITH YOUR ACTUAL GOOGLE MAPS API KEY -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&loading=async"
+  onerror="document.getElementById('map').style.display='none'; document.getElementById('api-notice').style.display='block';"
+  async defer>
+</script>
+
+</body>
+</html>
