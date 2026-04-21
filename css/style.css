@@ -773,6 +773,13 @@ h4 { font-size: 1.2rem; }
 }
 .rating .count { color: #999; font-size: 0.8rem; }
 
+.product-card .card-img {
+  object-fit: contain !important;
+  background: #f7f3ef;
+  height: 300px !important;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
 .product-card .card-body .price {
   font-family: 'Oswald', sans-serif;
   font-size: 1.4rem;
