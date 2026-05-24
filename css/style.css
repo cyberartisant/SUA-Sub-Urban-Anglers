@@ -1295,6 +1295,9 @@ h4 { font-size: 1.2rem; }
   box-shadow: var(--shadow);
   background: #000;
   max-height: 520px;
+  width: 100%;
+  margin: 0 auto;
+  transition: max-width 0.45s ease;
 }
 .sua-carousel-track {
   display: flex;
