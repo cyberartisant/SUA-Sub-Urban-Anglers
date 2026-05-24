@@ -292,8 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Photo Carousel ──
   const track = document.getElementById('suaTrack');
   const dotsContainer = document.getElementById('suaDots');
-  const carousel = document.getElementById('suaCarousel');
-  if (track && dotsContainer && carousel) {
+  if (track && dotsContainer) {
     const slides = track.querySelectorAll('.sua-slide');
 
     slides.forEach(slide => {
@@ -316,30 +315,12 @@ document.addEventListener('DOMContentLoaded', () => {
       dotsContainer.appendChild(dot);
     });
 
-    function fitCarousel(img) {
-      if (!img.naturalWidth || !img.naturalHeight) return;
-      const maxW = carousel.parentElement.offsetWidth;
-      const h = carousel.offsetHeight || 520;
-      const ideal = Math.round(h * (img.naturalWidth / img.naturalHeight));
-      carousel.style.maxWidth = Math.min(ideal, maxW) + 'px';
-    }
-
-    function updateWidth(idx) {
-      const img = slides[idx].querySelector('img');
-      if (img.complete && img.naturalWidth) {
-        fitCarousel(img);
-      } else {
-        img.addEventListener('load', () => fitCarousel(img), { once: true });
-      }
-    }
-
     function goTo(n) {
       current = (n + slides.length) % slides.length;
       track.style.transform = `translateX(-${current * 100}%)`;
       dotsContainer.querySelectorAll('.sua-dot').forEach((d, i) =>
         d.classList.toggle('active', i === current)
       );
-      updateWidth(current);
     }
 
     function startAuto() {
@@ -349,8 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.sua-prev').addEventListener('click', () => { clearInterval(autoTimer); goTo(current - 1); startAuto(); });
     document.querySelector('.sua-next').addEventListener('click', () => { clearInterval(autoTimer); goTo(current + 1); startAuto(); });
 
-    window.addEventListener('resize', () => updateWidth(current));
-    updateWidth(0);
     startAuto();
   }
 
