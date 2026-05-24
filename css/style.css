@@ -1319,9 +1319,11 @@ h4 { font-size: 1.2rem; }
   width: 100%;
   height: 520px;
   object-fit: contain;
+  object-position: center center;
   display: block;
   position: relative;
   z-index: 1;
+  margin: 0 auto;
 }
 .sua-carousel-btn {
   position: absolute;
@@ -1362,6 +1364,7 @@ h4 { font-size: 1.2rem; }
 }
 .sua-dot.active { background: var(--orange); }
 @media (max-width: 600px) {
-  .sua-slide img { height: 280px; }
   .sua-carousel { max-height: 280px; }
+  .sua-slide { display: flex; align-items: center; justify-content: center; }
+  .sua-slide img { width: 100%; height: 280px; }
 }
