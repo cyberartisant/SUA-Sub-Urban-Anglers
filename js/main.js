@@ -289,4 +289,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+  // ── Photo Carousel ──
+  const track = document.getElementById('suaTrack');
+  const dotsContainer = document.getElementById('suaDots');
+  if (track && dotsContainer) {
+    const slides = track.querySelectorAll('.sua-slide');
+
+    slides.forEach(slide => {
+      const img = slide.querySelector('img');
+      if (img) {
+        const backdrop = document.createElement('div');
+        backdrop.className = 'sua-backdrop';
+        backdrop.style.backgroundImage = `url('${img.src}')`;
+        slide.insertBefore(backdrop, img);
+      }
+    });
+    let current = 0;
+    let autoTimer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'sua-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(n) {
+      current = (n + slides.length) % slides.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.sua-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    document.querySelector('.sua-prev').addEventListener('click', () => { clearInterval(autoTimer); goTo(current - 1); startAuto(); });
+    document.querySelector('.sua-next').addEventListener('click', () => { clearInterval(autoTimer); goTo(current + 1); startAuto(); });
+
+    startAuto();
+  }
+
 });
